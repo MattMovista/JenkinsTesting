@@ -1,8 +1,8 @@
 node {
-  Stage 'Checkout'
+  stage 'Checkout'
     echo "Hello from Checkout"
     sh "pwd"
     sh "ls"
-  Stage 'Build'
+  stage 'Build'
     echo "Hello from Build!!"
 }
