@@ -1,9 +1,9 @@
 node {
   stage 'Checkout'
     checkout scm
-    echo "Hello from Checkout"
-    sh "pwd"
-    sh "ls"
   stage 'Build'
-    echo "Hello from Build!!"
+    sh "npm install"
+  stage 'Deploy'
+    def statusCode = sh script:"pm2 stop index.js", returnStatus:true
+    sh "pm2 start index.js"
 }
